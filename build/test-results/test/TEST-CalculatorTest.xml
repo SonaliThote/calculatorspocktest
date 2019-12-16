@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CalculatorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-12-16T09:12:10" hostname="INPUL5CG8503ZPT" time="0.139">
+  <properties/>
+  <testcase name="when Calculator Initialized Then Return True" classname="CalculatorTest" time="0.133"/>
+  <testcase name="when Addition Two Number Then Return Correct Answer" classname="CalculatorTest" time="0.001"/>
+  <testcase name="when Subtraction Then Return Correct Answer" classname="CalculatorTest" time="0.002"/>
+  <testcase name="when Division Then Return Correct Answer" classname="CalculatorTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
