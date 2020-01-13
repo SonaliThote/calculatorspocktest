@@ -2,27 +2,20 @@ import spock.lang.Specification
 
 class CalculatorTest extends Specification{
 
-    private static Calculator calculator;
-    private int result ;
-
-    static def "init"() {
-        calculator = new Calculator()
-    }
-
-    def "when Calculator Initialized Then Return True"() {
+    def "calculator class initialized then return true"(){
         given:
-        calculator = new Calculator()
-        boolean b
+        Calculator calculator = new Calculator()
         when:
-        b = calculator.getStatus()
+        boolean b =(calculator != null)
         then:
         b
     }
 
     def "when Addition Two Number Then Return Correct Answer"() {
         given:
-        calculator = new Calculator()
+        Calculator calculator = new Calculator()
         when:
+        def result
         result = calculator.addition(5, 6)
         then:
         result == 11
@@ -30,33 +23,42 @@ class CalculatorTest extends Specification{
 
     def "when Subtraction Then Return Correct Answer"() {
         given:
-        calculator = new Calculator()
+        Calculator calculator = new Calculator()
         when:
+        def result
         result =  calculator.subtraction(7, 4)
         then:
         result == 3
     }
 
-    def "when Division Then Return Correct Answer"() {
+    def "division should return correct answer"(){
         given:
-        calculator = new Calculator()
+        Calculator calculator = new Calculator()
         when:
-        result =  calculator.division(8, 4)
+        def result
+        result = calculator.divide(6, 2)
         then:
-        result == 2
+        result == 3
     }
 
-    /*public void whenDivisionByZeroThenThrowException() {
+    def "for division by zero throw exception"(){
         given:
-        calculator = new Calculator();
-        Throwable exception;
+        Calculator calculator = new Calculator()
         when:
-        exception = Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            calculator.division(5, 0);
-        });
+        calculator.divide(2, 0)
         then:
-        IllegalArgumentException ex = thrown()
-        ex
-        Assert.assertEquals("Cannot divide by zero", exception.getMessage());
-    }*/
+        thrown(IllegalArgumentException)
+
+    }
+
+    def "for division by -ve number"(){
+        given:
+        Calculator calculator = new Calculator()
+        when:
+        def result
+        result = calculator.divide(2, -2)
+        then:
+        result == -1
+    }
+
 }

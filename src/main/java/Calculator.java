@@ -1,14 +1,5 @@
+
 public class Calculator {
-
-    private boolean status;
-
-    public Calculator() {
-        this.status = true;
-    }
-
-    public boolean getStatus() {
-        return status;
-    }
 
     public int addition(int a, int b) {
         return a + b;
@@ -17,12 +8,10 @@ public class Calculator {
     public int subtraction(int a, int b) {
         return a - b;
     }
-
-    public int division(int a, int b) {
-        if (b == 0) {
-            throw new IllegalArgumentException("Cannot division by zero");
-        } else {
-            return a / b;
+    public int divide(int n, int d) {
+        if(d==0){
+            throw new IllegalArgumentException("Division by zero is not correct");
         }
+        return n/d;
     }
 }
